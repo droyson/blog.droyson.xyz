@@ -7,25 +7,46 @@
   <meta name="description" content="Read blog posts by droyson">
   <meta name="keywords" content="royson, droyson, blog">
   <title>dRoyson</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/site/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/site/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/site/favicon-16x16.png">
+  <link rel="stylesheet" href="https://yarnpkg.com/en/package/normalize.css">
+  <link rel="stylesheet" href="/styles/index.css">
 </head>
 <body>
   <header>
-    <h2>dRoyson</h2>
+    <div class="header--block-flex">
+      <a class="header--logo" href="/">
+        <img class="logo" src="/images/site/logo.svg" alt="dRoyson Logo">
+      </a>
+      <a class="header--link" href="/about.html">About me</a>
+    </div>
   </header>
   <main>
-    <article id="about-me">
-      <h3>About me</h3>
-      <p>Hey there, this is Royson. Let me do a quick intro of myself. I'm a software developer by profession and an amalgamation of good and bad decisions in the process ;). </p>
-      <!-- For now that should be sufficient info to begin with. Let's head over to the blog. -->
+    <article id="post-2">
+      <h3>Creating a website, Part 2: Design</h3>
       <section>
-        <h4>Why am I writing this?</h4>
-        <p>Well there are 2 main reasons to this.</p>
-        <ol>
-          <li>It's been a little over 6 years that I've been working as a software developer, more precisely a frontend engineer. In all this while I've not had my own website or a tech blog. It's not that common for every frontend dev to have a blog of their own but when you have the skill set why not show it off a bit, right?</li>
-          <li>It turns out that human brain has a limited memory and remembering stuff is a difficult job. So this blog will be a journal to everything that I think is important to remember. Hopefully me documenting stuff might come in handy for someone someday</li>
-        </ol>
-        <p>Now that I've spoken on why I'm writing this let's move to the <a href="#post-1">first post.</a></p>
+        <p>In our <a href="#post-1">previous post</a> we discussed about hosting a static page on github with a custom domain. Now let's get started with one of the most important part of a website - Design. I call it the important part of a website cause - <i>Jo dikhta hai, wahi bikta hai</i> (What you see sells).</p>
+        <p>To have some clarity on the page structure I decided to move <a href="/about.html">About me</a> to a separate page.</p>
+        <p>The next step for me was creating a logo and favicon icon for the site. It was a tedious task as I spent an entire day on it. I used <a href="https://inkscape.org/" target="_blank" rel="noopener">inkscape</a> to create the SVGs. It's free and easy to use once you get over the learning curve (Which was 4+ hours for me :p). The <a href="https://inkscape.org/learn/tutorials/" target="_blank" rel="noopener">official tutorials</a> provided by inkscape are easy to understand and get started with.</p>
+        <p>The first rule of webpage design is - Mobile first. To achieve this switch to <a href="https://developers.google.com/web/tools/chrome-devtools/device-mode" target="_blank" rel="noopener">mobile device with Device Mode</a>. To move on with the rest of the section make sure you know some <a href="https://www.w3schools.com/css/default.asp" target="_blank" rel="noopener">basic CSS</a>.</p>
+        <p>Few pointers on creating a responsive page.</p>
+        <ul>
+          <li>Use <a href="https://necolas.github.io/normalize.css/" target="_blank" rel="noopener">Normalize.css</a> to render consistent looking elements.</li>
+          <li>Set <code>box-sizing: border-box</code> on all elements using wildcard (<code>*</code>)</li>
+          <li>Set the document level <code>font-size</code> in pixels (<code>px</code>) and then use <code>rem</code> for setting the font-size of the elements. The following blog - <a href="https://www.element84.com/blog/responsive-typography" target="_blank" rel="noopener">Responsive Typography: rem, em, and px</a> - describes this use case beautifully.</li>
+          <li>Always have a <code>max-width</code> for the main content. This ensures that while viewing on screens with higher resolution a user doesn't have to move his head across the length of the screen.</li>
+        </ul>
+        <p>Here's a simple.css to get you started:</p>
+        <script src="https://gist.github.com/droyson/228d9a75dec614ecacadfd6f2b97308a.js"></script>
+        <p>I needed the header to be fixed on top. The intuitive approach is to use <code>position: fixed</code> but then you would be trying to fix the margin since the content is now overlapping. The simpler way to go about is to use <code>position: sticky</code> and bam! it works like magic.</p>
+        <p>Like the way this blog page looks now? Feel free to get the code from <a href="https://github.com/droyson/blog.droyson.xyz" target="_blank" rel="noopener">my github repo.</a></p>
+        <p>Would love to hear the feedback for the page. Drop me a mail at <a href="mailto:me.droyson@gmail.com">me.droyson@gmail.com</a></p>
+        <p>That's all for now. Ciao until we meet again!</p>
       </section>
+      <div class="post-meta">
+        Posted by <em>Royson</em> on <time datetime="Oct 5, 2020">Oct 5, 2020</time>
+      </div>
     </article>
     <article id="post-1">
       <h3>Creating a website, Part 1: Hosting</h3>
@@ -39,12 +60,15 @@
         <img src="/images/blog/post-1/gh_pages_setup.png" alt="Github Pages Setup" loading="lazy">
         <p>A few seconds of github magic and boom! you have a live webpage. The link to your page will be available in the "Github Pages" section.</p>
         <p>Next step would be pointing the domain to this new page. Now that you have the page live you should be able to see the "Custom domain" section. Add the domain or subdomain that you need to point to your webpage and click save. Now go to Manage DNS settings page provided by your DNS provider (GoDaddy.com in my case). This screen may vary based on DNS providers but more or less will have the same structure as shown below</p>
-        <img src="/images/blog/post-1/godaddy-subdomain-register.png" alt="GoDaddy domain register">
+        <img src="/images/blog/post-1/godaddy-subdomain-register.png" alt="GoDaddy domain register" loading="lazy">
         <p>Curious as to how I got to these steps? Read more here - <a href="https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site" target="_blank" rel="noopener">Managing a custom domain for your GitHub Pages site.</a></p>
         <p>That's all folks! Now you should have the page live on the custom domain.</p>
         <br/>
         <p><b>PS:</b> Liked what you read or have a suggestion feel free to reach me at: <a href="mailto:me.droyson@gmail.com">me.droyson@gmail.com</a></p>
       </section>
+      <div class="post-meta">
+        Posted by <em>Royson</em> on <time datetime="Oct 5, 2020">Oct 5, 2020</time>
+      </div>
     </article>
   </main>
 </body>

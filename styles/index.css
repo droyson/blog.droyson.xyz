@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+html {
+  font-size: 16px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  color: #030609;
+}
+
+a {
+  color: #275a8e;
+}
+
+code {
+  background-color: #e0e0e0;
+  padding: 0 4px;
+  border-radius: 2px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  font-family: 'Nunito Sans', sans-serif;
+  line-height: 1.5rem;
+  overflow-x: hidden;
+}
+
+header {
+  height: 48px;
+  padding: 4px 20px;
+  box-shadow: 0 1px 4px 0px #00000055;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: #f0f8ff;
+}
+
+main {
+  padding: 20px 0;
+  overflow-x: hidden;
+  background-color: #f5f5f5;
+}
+
+article {
+  padding: 20px;
+  background-color: #fff;
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: 1px 1px 4px 1px #00000022;
+}
+
+article:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.header--block-flex {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  height: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.header--link {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #3366cc;
+}
+
+.header--logo {
+  height: 40px;
+}
+
+h3, h4, h5, h6 {
+  margin: 0 0 16px 0;
+}
+
+article p {
+  margin: 0px;
+  text-align: justify;
+}
+
+article p:not(:last-child), ol, ul {
+  margin: 0 0 12px 0;
+}
+
+article li {
+  margin-bottom: 8px;
+}
+
+article img {
+  max-width: 100%;
+  border: 2px solid lightblue;
+  border-radius: 4px;
+}
+
+.post-meta, .post-meta * {
+  margin: 8px 0 0 0;
+  text-align: end;
+  font-size: 0.9rem;
+  color: #4d5f73;
+}
