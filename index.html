@@ -26,10 +26,23 @@
     <article id="post-2">
       <h3>Creating a website, Part 2: Design</h3>
       <section>
-        <p>In our <a href="#post-1">previous post</a> we discussed about hosting a static page on github with a custom domain. Now let's get started with one of the most important part of a website - Design. I call it the important part of a website cause - <i>Jo dikhta hai, wahi bikta hai</i> (What you see sells).</p>
+        <p>In the <a href="#post-1">previous post</a> we discussed about hosting a static page on github with a custom domain. Now let's get started with one of the most important part of a website - Design. I call it the important part of a website cause - <i>Jo dikhta hai, wahi bikta hai</i> ( <a href="https://translate.google.com/?um=1&ie=UTF-8&hl=en&client=tw-ob#view=home&op=translate&sl=auto&tl=en&text=%E0%A4%9C%E0%A5%8B%20%E0%A4%A6%E0%A4%BF%E0%A4%96%E0%A4%A4%E0%A4%BE%20%E0%A4%B9%E0%A5%88%20%E0%A4%B5%E0%A4%B9%E0%A5%80%20%E0%A4%AC%E0%A4%BF%E0%A4%95%E0%A4%A4%E0%A4%BE%20%E0%A4%B9%E0%A5%88" target="_blank" rel="noopener noreferrer">Loosely translated by google as</a> - <i>What you see sells</i> ).</p>
         <p>To have some clarity on the page structure I decided to move <a href="/about.html">About me</a> to a separate page.</p>
-        <p>The next step for me was creating a logo and favicon icon for the site. It was a tedious task as I spent an entire day on it. I used <a href="https://inkscape.org/" target="_blank" rel="noopener">inkscape</a> to create the SVGs. It's free and easy to use once you get over the learning curve (Which was 4+ hours for me :p). The <a href="https://inkscape.org/learn/tutorials/" target="_blank" rel="noopener">official tutorials</a> provided by inkscape are easy to understand and get started with.</p>
-        <p>The first rule of webpage design is - Mobile first. To achieve this switch to <a href="https://developers.google.com/web/tools/chrome-devtools/device-mode" target="_blank" rel="noopener">mobile device with Device Mode</a>. To move on with the rest of the section make sure you know some <a href="https://www.w3schools.com/css/default.asp" target="_blank" rel="noopener">basic CSS</a>.</p>
+        <p>The next step for me was creating a logo and <a href="https://en.wikipedia.org/wiki/Favicon" target="_blank" rel="noopener">favicon</a> for the site. There are multiple file formats to create a logo but SVG is my go to choice for the simple reason that it is a vector graphic is not prone to pixelation. Favicon in the required format can be generated from SVG file using one of the many online converters.</p>
+        <p>It was a tedious task as I spent an entire day on designing the logo. I used <a href="https://inkscape.org/" target="_blank" rel="noopener">inkscape</a> to create the SVGs. It's free and easy to use once you get over the learning curve ( Which was 4+ hours for me 😛 ). The <a href="https://inkscape.org/learn/tutorials/" target="_blank" rel="noopener">official tutorials</a> provided by inkscape are easy to understand and get started with.</p>
+        <p>The first rule of webpage design is - Mobile first. Why? Cause,</p>
+          <ol>
+            <li><a href="https://www.broadbandsearch.net/blog/mobile-desktop-internet-usage-statistics" target="_blank" rel="noopener">mobile usage is higher compared to desktop</a> and</li>
+            <li>scaling up from mobile layout to desktop is easier than scaling down.</li>
+        </ol>
+        <p>To achieve this switch to <a href="https://developers.google.com/web/tools/chrome-devtools/device-mode" target="_blank" rel="noopener">mobile device with Device Mode</a>.</p>
+        <p>
+          <em><u>Note:</u> To move on with the rest of the section make sure you understand some <a href="https://www.w3schools.com/css/default.asp" target="_blank" rel="noopener">basic CSS</a>.</em>
+        </p>
+        <p>Before coding it is better to have a visual in hand. I did a quick pen and paper sketch before implementing it. Below is a rough sketch of what I had in mind.</p>
+        <img src="/images/blog/post-2/page_pen_sketch.jpg" alt="Pen paper sketch for the page" loading="lazy">
+        <p>As per this sketch, I needed the header to be fixed on top. The intuitive approach is to use <code>position: fixed</code> but then you would be trying to fix the margin since the content is now overlapping. The simpler way to go about is to use <code>position: sticky</code> and bam! it works like magic.</p>
+        <p>Each post needed to have a card like feel to it. To do that add a <code>max-width</code> on the container for each posts and some <code>box-shadow</code> to visually raise the content from the rest of the page. Center align the cards for larger screens using <code>margin: auto</code> style.</p>
         <p>Few pointers on creating a responsive page.</p>
         <ul>
           <li>Use <a href="https://necolas.github.io/normalize.css/" target="_blank" rel="noopener">Normalize.css</a> to render consistent looking elements.</li>
@@ -39,13 +52,12 @@
         </ul>
         <p>Here's a simple.css to get you started:</p>
         <script src="https://gist.github.com/droyson/228d9a75dec614ecacadfd6f2b97308a.js"></script>
-        <p>I needed the header to be fixed on top. The intuitive approach is to use <code>position: fixed</code> but then you would be trying to fix the margin since the content is now overlapping. The simpler way to go about is to use <code>position: sticky</code> and bam! it works like magic.</p>
         <p>Like the way this blog page looks now? Feel free to get the code from <a href="https://github.com/droyson/blog.droyson.xyz" target="_blank" rel="noopener">my github repo.</a></p>
         <p>Would love to hear the feedback for the page. Drop me a mail at <a href="mailto:me.droyson@gmail.com">me.droyson@gmail.com</a></p>
         <p>That's all for now. Ciao until we meet again!</p>
       </section>
       <div class="post-meta">
-        Posted by <em>Royson</em> on <time datetime="Oct 11, 2020">Oct 11, 2020</time>
+        Posted by <em>Royson</em> on <time datetime="Oct 11, 2020">Oct 28, 2020</time>
       </div>
     </article>
     <article id="post-1">
