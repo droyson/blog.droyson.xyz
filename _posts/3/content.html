@@ -1,0 +1,91 @@
+<p>In <a href="/posts/2">Creating a website, Part 2: Design</a> I skimmed over the CSS part of the code providing
+  a bare minimum of what I implemented. Based on popular feedback (50% of total 2 feedbacks) I decided to take a
+  dive into the basics of CSS positioning. In this post we will take a look at different types of positioning
+  and how to implement those with working examples.</p>
+<p>There are 5 different <code>position</code> values - <code>static</code>, <code>relative</code>,
+  <code>absolute</code>, <code>fixed</code> and <code>sticky</code> and 4 helper properties to position the
+  elements - <code>top</code>, <code>bottom</code>, <code>left</code> and <code>right</code>. Let us explore
+  each of these in detail.
+</p>
+<h4>Position - <code>static</code></h4>
+<p>This is the default position given to every HTML element. One could also call this the unpositioned position
+  (CSS irony!) because the helper properties have no effect on the placement of the element and it will always
+  be placed in the given order. Below is an example from CodePen illustrating the same.</p>
+<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="css,result" data-user="droyson"
+  data-slug-hash="pobVgRN"
+  style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+  data-pen-title="Position Demo - Static">
+  <span>See the Pen <a href="https://codepen.io/droyson/pen/pobVgRN">
+      Position Demo - Static</a> by Royson (<a href="https://codepen.io/droyson">@droyson</a>)
+    on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<p>As can be seen above the <i>Green box</i> has not shifted even after providing <code>top</code> and
+  <code>left</code> values.
+</p>
+<h4>Position - <code>relative</code></h4>
+<p>Relative position as the name suggests will place the element relative to its current position. Changing the
+  placement of an element will move the element but will retain the original position meaning the siblings to a
+  relatively positioned element will act as if the element is still occupying its original space on the page.
+  The example below will help better understand this concept.</p>
+<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="css,result" data-user="droyson"
+  data-slug-hash="dyXeMRo"
+  style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+  data-pen-title="Position Demo - Relative">
+  <span>See the Pen <a href="https://codepen.io/droyson/pen/dyXeMRo">
+      Position Demo - Relative</a> by Royson (<a href="https://codepen.io/droyson">@droyson</a>)
+    on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<p><i>Green box</i> has moved from its original position by <code>50px</code> from top and left of it's current
+  position but the <i>Red box</i> remains at it's original space.</p>
+<h4>Position - <code>absolute</code></h4>
+<p>Absolute positions are similar to relative in the sense elements are positioned relative to the positioned
+  parent. What is a positioned parent? Any immediate ancestor element to the absolute element that is not
+  statically positioned is a positioned parent. If there are no positioned parent then the element is placed
+  relative to <code>&lt;body&gt;</code> tag.</p>
+<p>An absolute positioned element also gives up the space that it was supposed to occupy originally meaning the
+  siblings to absolute element will act as if the element is not present and move to claim the blank space.
+  Below is a demo to explain this.</p>
+<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="css,result" data-user="droyson"
+  data-slug-hash="PozaKQv"
+  style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+  data-pen-title="Position Demo - Absolute">
+  <span>See the Pen <a href="https://codepen.io/droyson/pen/PozaKQv">
+      Position Demo - Absolute</a> by Royson (<a href="https://codepen.io/droyson">@droyson</a>)
+    on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<p>The <i>Green box</i> is shifted by <code>50px</code> from it's parents top and left and <i>Red box</i> has
+  moved up to the space of <i>Green box</i></p>
+<h4>Position - <code>fixed</code></h4>
+<p>Fixed element is fixed to the viewport(screen). Nothing more to elaborate here. Check the example below</p>
+<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="css,result" data-user="droyson"
+  data-slug-hash="yLJEoZM"
+  style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+  data-pen-title="Position Demo - Fixed">
+  <span>See the Pen <a href="https://codepen.io/droyson/pen/yLJEoZM">
+      Position Demo - Fixed</a> by Royson (<a href="https://codepen.io/droyson">@droyson</a>)
+    on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<p>In the example above the <i>Green box</i> is not fixed to the screen cause the example is rendered with an
+  <code>&lt;iframe&gt;</code> which has it's own viewport. Hence you would be able to see the <i>Green box</i>
+  being fixed to iframe.
+</p>
+<h4>Position - <code>sticky</code></h4>
+<p>As the name suggests the element sticks to the given position. The element behaves as if it's relatively
+  placed until it scrolls to the specified position on the page post which it acts as a fixed element. In the
+  example below <i>Red box</i> scrolls to top <code>20px</code> and then stays there while the lower <i>Green
+    box</i> scrolls under it.</p>
+<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="css,result" data-user="droyson"
+  data-slug-hash="qBNKPdQ"
+  style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+  data-pen-title="Position Demo - Sticky">
+  <span>See the Pen <a href="https://codepen.io/droyson/pen/qBNKPdQ">
+      Position Demo - Sticky</a> by Royson (<a href="https://codepen.io/droyson">@droyson</a>)
+    on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<br />
+<p>That's all the basics of positioning in CSS.</p>

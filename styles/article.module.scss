@@ -1,0 +1,54 @@
+.article {
+  padding: 20px;
+  background-color: #fff;
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: 1px 1px 4px 1px #00000022;
+  position: relative;
+  overflow: hidden;
+  text-align: justify;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  :global {
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0 0 1em 0;
+    }
+
+    p, ol, ul {
+      margin: 0 0 12px 0;
+    }
+
+    ol, ul {
+      padding-inline-start: 1.5rem;
+    }
+
+    li {
+      padding-left: 0.5rem;
+      margin: 0 0 8px 0;
+    }
+
+    a {
+      color: #275a8e;
+    }
+
+    img {
+      max-width: 100%;
+      border: 2px solid lightblue;
+      border-radius: 4px;
+      margin: 0px auto;
+      max-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    code {
+      background-color: #e0e0e0;
+      padding: 0 4px;
+      border-radius: 2px;
+    }
+  }
+}

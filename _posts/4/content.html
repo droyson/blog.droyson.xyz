@@ -1,0 +1,36 @@
+<p>A static website with no interaction is no fun. The only thing clickable in here right now is the few links for
+  references and <a href="/about">About me</a> page. Apart from user interactions with the site just for fun there
+  is one more important feedback that needs to be solved. On my last post 100% of the feedback was on not being able to
+  quickly view all the post and having to scroll endlessly to reach to the next post. In this post we will solve this
+  particular problem using Javascript <em>(JS)</em>.</p>
+<p>Javascript is a programming language used in the browser. In past few years javascript has evolved from being used
+  only within browsers to servers and other IoT devices. That's all the history I would be able to provide on JS for
+  this post.</p>
+<p>Moving ahead with the post. Javascript can be used to change the styles of an element, listen to clicks, fetch data
+  from backend servers and a lot more. In here we will limit our usage to a few basic methods of manipulating the HTML
+  elements. So let's get to it.</p>
+<p>The content when loaded should be in a collapsed state for the user to be able to view more posts rather than having
+  to scroll indefinitely to reach the next post. This is some simple CSS. Adding a static <code>height</code> to the
+  card with <code>overflow: hidden</code> and now all 4 posts are visible with no scroll on the mobile screen. But how
+  would the user read the post now? Well let's solve for this now.</p>
+<p>Let's add an <em>expand</em> link to the bottom of every post and position it absolutely to the bottom of every card.
+  For details on how to position elements check out my previous post <a href="/posts/3">CSS Positions</a>.</p>
+<p>After all this CSS trickery the page looks like the image below.</p>
+<img src="/blog/post-4/Mobile_collapsed_ss.png" alt="Collapsed view on mobile">
+<p>Now that we have a link to Expand the card let's make it functional.</p>
+<p>First step would be to create a js file and include it with the html using the <code>&lt;script&gt;</code> tag.</p>
+<p>In the js file add an event listener for <code>DOMContentLoaded</code> so that the JS code is loaded only after the
+  HTML is loaded. This acts as a safety and helps encapsulate the JS code within a function instead of <a
+    href="https://www.tutorialspoint.com/what-is-global-namespace-pollution-in-javascript" target="_blank"
+    rel="noopener">polluting the global namespace</a>.</p>
+<p>Get references to all the <em>Expand/Collapse</em> links using <code>querySelectorAll</code> and add click listeners
+  to each link.</p>
+<p>When the link gets clicked the event listener callback is triggered in which <code>this</code> is a keyword
+  referencing the element that got clicked. Find the parent article to find out if the card is in collapsed or expanded
+  state and update the class of the article accordingly. We also update the text in the link to display the correct
+  action the link will perform i.e. <em>Expand</em> or <em>Collapse</em>.</p>
+<p>Below is the code that I used to implement the expand/collapse functionality.</p>
+<img src="/blog/post-4/expand_collpase_code.png" alt="Expand collapse code snippet">
+<p>And that's how you achieve interactivity in a web page.</p>
+<p>How do you like this post? Please post your feedback to <a
+    href="mailto:me.droyson@gmail.com">me.droyson@gmail.com</a></p>
